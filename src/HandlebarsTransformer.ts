@@ -87,9 +87,9 @@ export default new Transformer<HandlebarsConfig>({
     const wax = handlebarsWax(Handlebars)
     wax.helpers(handlebarsHelpers)
     wax.helpers(handlebarsLayouts)
-    toArray(config.helpers).map((x) => wax.helpers(`${x}/**/*.js`))
+    toArray(config.helpers).map((x) => wax.helpers(`${x}/**/*.{js,cjs}`))
     toArray(config.data).map((x) => wax.data(`${x}/**/*.{json,js}`))
-    toArray(config.decorators).map((x) => wax.decorators(`${x}/**/*.js`))
+    toArray(config.decorators).map((x) => wax.decorators(`${x}/**/*.{js,cjs}`))
     toArray(config.layouts).map((x) =>
       wax.partials(`${x}/**/*.{hbs,handlebars,js}`),
     )
@@ -98,9 +98,9 @@ export default new Transformer<HandlebarsConfig>({
     )
 
     const dependencies: string[] = [
-      toArray(config.helpers).map((x) => `${x}/**/*.js`),
+      toArray(config.helpers).map((x) => `${x}/**/*.{js,cjs}`),
       toArray(config.data).map((x) => `${x}/**/*.{json,js}`),
-      toArray(config.decorators).map((x) => `${x}/**/*.js`),
+      toArray(config.decorators).map((x) => `${x}/**/*.{js,cjs}`),
       toArray(config.layouts).map((x) => `${x}/**/*.{hbs,handlebars,js}`),
       toArray(config.partials).map((x) => `${x}/**/*.{hbs,handlebars,js}`),
     ]

@@ -1,6 +1,6 @@
 {
   "name": "@partiellkorrekt/parcel-transformer-handlebars",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Handlebars Tranformer Plugin for Parcel",
   "main": "lib/HandlebarsTransformer.js",
   "author": "Abraham Przewodnik",
